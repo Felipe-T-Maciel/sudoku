@@ -1,10 +1,8 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class sudoku {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Random ran = new Random();
         int[][] sudoku = new int[9][9];
         int n=0;
 
@@ -33,11 +31,11 @@ public class sudoku {
                 int j;
                 tabela(sudoku);
                 System.out.print("Linha: ");
-                i = ran.nextInt(9)+0;
+                i = scan.nextInt();
                 System.out.print("Coluna: ");
-                j = ran.nextInt(9)+0;
+                j = scan.nextInt();
                 System.out.print("Que numero quer colocar: ");
-                sudoku[i][j] = ran.nextInt(9)+1;
+                sudoku[i][j] = scan.nextInt();
                 if(sudoku[i][j]>0 & sudoku[i][j]<=9){
                     System.out.println("Numero adicionado");
                     nomeEsudoku[l][i][j] = sudoku[i][j];
@@ -152,4 +150,4 @@ public class sudoku {
     public static boolean verificaSudoku(int[][] sudoku) {
 	    return verificaLinhas(sudoku) && verificaColunas(sudoku) && verificaBox(sudoku);
 	}
-}"# sudoku" 
+}
